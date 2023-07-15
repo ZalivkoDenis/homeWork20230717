@@ -6,7 +6,7 @@ import random
 import std_func
 
 
-def task_8_84(n: int) -> tuple:
+def task_8_84(n: int) -> tuple[int]:
     res = set()
     check_divider = 2
     while check_divider ** 2 <= n:

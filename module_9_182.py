@@ -8,7 +8,7 @@ from std_func import output_out_params as oop
 from std_func import clear_word_list_only_alfa as cwl
 
 
-def task_9_182(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple:
+def task_9_182(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple[str]:
 
     def clear_one_for_two(l1: list[str], l2: list[str]):
         res = set()
@@ -22,7 +22,7 @@ def task_9_182(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple:
     res = set()
     snt1 = snt1
     snt2 = snt2
-    if case_sensitive:
+    if not case_sensitive:
         snt1 = snt1.lower()
         snt2 = snt2.lower()
 
@@ -44,7 +44,13 @@ def main():
     sentence1 = 'Добро пожаловать в мир!'
     sentence2 = 'Добро должно быть с кулаками... Мир суров )'
     output_in_params(sentence1, sentence2)
+
+    print('Результат (case_sensitive = False):')
     oop(task_9_182(sentence1, sentence2, case_sensitive=False))
+
+    print('\nРезультат (case_sensitive = True):')
+    oop(task_9_182(sentence1, sentence2, case_sensitive=True))
+
     return
 
 

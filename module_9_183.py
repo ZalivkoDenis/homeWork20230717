@@ -7,7 +7,7 @@ from std_func import clear_word_list_only_alfa as cwl
 from std_func import output_out_params
 
 
-def task_9_183(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple:
+def task_9_183(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple[str]:
     """
     Даны два предложения.
     Напечатать слова, которые встречаются в двух предложениях только один раз.

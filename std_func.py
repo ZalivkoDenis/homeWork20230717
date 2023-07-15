@@ -41,6 +41,11 @@ def output_out_params(*args):
 
 
 def clear_word_list_only_alfa(wrd_lst: list[str]) -> list[str]:
+    """
+    Производит "очистку" каждой строки из списка от небукв
+    :param wrd_lst: Список строк
+    :return:
+    """
     return list(clear_word_only_alfa(item) for item in wrd_lst)
 
 

@@ -9,7 +9,6 @@ from std_func import clear_word_list_only_alfa as cwl
 
 
 def task_9_182(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple[str]:
-
     def clear_one_for_two(l1: list[str], l2: list[str]):
         res = set()
         l1 = cwl(l1)

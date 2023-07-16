@@ -17,13 +17,20 @@ def task_9_183(snt1: str, snt2: str, case_sensitive: bool = False) -> tuple[str]
     :param case_sensitive: регистронезависимый поиск
     :return: Слова, которые встречаются в двух предложениях только один раз.
     """
-    result = set()
 
+    result = set()
+    snt_f = list[str]
     if not case_sensitive:
-        result.update(cwl(snt1.lower().split()) + cwl(snt2.lower().split()))
+        snt_f = cwl(snt1.lower().split()) + cwl(snt2.lower().split())
     else:
-        result.update(cwl(snt1.split()) + cwl(snt2.split()))
+        snt_f = cwl(snt1.split()) + cwl(snt2.split())
+
+    for item in snt_f:
+        if snt_f.count(item) == 1:
+            result.add(item)
+
     result.discard('')
+
     return tuple(result)
 
 
@@ -31,8 +38,6 @@ def output_in_params(*args):
     print(f'Предложение 1:\n\t{args[0]}\n'
           f'Предложение 2:\n\t{args[1]}\n')
     return
-
-
 
 
 def main():
